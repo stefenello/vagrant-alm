@@ -120,15 +120,15 @@ Vagrant.configure("2") do |config|
         libvirt.storage_pool_name = "ext_storage"
     end
   
-    config.vm.provision "ansible" do |ansible|
-        ansible.playbook = "ansible/alm.yml"
-        ansible.groups = {
-            "jenkins_server" => ["jenkins", "jenkins_box"],
-            "sonar_server" => ["sonar", "sonar_box"],
-            "nexus_server" => ["nexus", "nexus_box"],
-            "app_server" => ["app", "app2", "app_box", "app2_box"],
-        }
-    end
+#     config.vm.provision "ansible" do |ansible|
+#         ansible.playbook = "ansible/alm.yml"
+#         ansible.groups = {
+#             "jenkins_server" => ["jenkins", "jenkins_box"],
+#             "sonar_server" => ["sonar", "sonar_box"],
+#             "nexus_server" => ["nexus", "nexus_box"],
+#             "app_server" => ["app", "app2", "app_box", "app2_box"],
+#         }
+#     end
   
     if Vagrant.has_plugin?("vagrant-hostmanager")
         config.hostmanager.enabled = true
